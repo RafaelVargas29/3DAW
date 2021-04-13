@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael Vargas Calculadora</title>
+</head>
+<body>
+    <form action="dados-calculadora.php" method="post">
+        Digite o valor A: <input type="text" name="a">
+        <br><br>
+        Digite o valor B: <input type="text" name="b">
+        <br><br>
+        <select name="operacao">
+            <option selected>Escolha a operação desejada</option>
+            <option value="soma">Adição</option>
+            <option value="sub">Subtração</option>
+            <option value="mult">Multiplicação</option>
+            <option value="divisao">Divisão</option>
+        </select>
+        <input type="submit" value="enviar">
+    </form>
+</body>
+</html>
