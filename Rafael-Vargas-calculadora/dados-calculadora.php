@@ -22,12 +22,12 @@
             echo "O resultado da divisão é: $result";
         break;
 
-        case "porcenta";
+        case "porcenta":
             $result = ($valora/100) * $valorb;
             echo "$valora% de $valorb é: $result";
         break;
 
-        case "aoquad";
+        case "aoquad":
             if($valora == ""){
                 echo "Você dexou o campo <em>--Digite A--</em> em branco. Por favor, siga as instruções para uso da calculadora!";
             }  
@@ -40,9 +40,9 @@
                     echo "O resultado de $valora<sup>2</sup> é: $result";  
                 }
             } 
-            break;
+        break;
 
-        case "sobx";
+        case "sobx":
             if($valorb == ""){
                 echo "Você deixou o campo <em>--DIGITE B--</em> em branco. Por favor, siga as instruções para uso da calculadora!";
             }
@@ -58,19 +58,19 @@
             }
         break;
 
-        case "raizquad";
-        if($valora == ""){
-            echo "Você dexou o campo <em>--Digite A--</em> em branco. Por favor, siga as instruções para uso da calculadora!";
-        }  
-        else{
-            if($valorb != ""){
-                echo "Você preencheu o campo <em>--Digite B--</em>, por favor, siga as instruções para uso da calculadora!";
-            }
+        case "raizquad":
+            if($valora == ""){
+                echo "Você dexou o campo <em>--Digite A--</em> em branco. Por favor, siga as instruções para uso da calculadora!";
+            }  
             else{
-                $result = sqrt($valora);
-                echo "A Raiz quadrada de $valora é: $result"; 
+                if($valorb != ""){
+                    echo "Você preencheu o campo <em>--Digite B--</em>, por favor, siga as instruções para uso da calculadora!";
+                }
+                else{
+                    $result = sqrt($valora);
+                    echo "A Raiz quadrada de $valora é: $result"; 
+                }
             }
-        }
         break;
     }
 
