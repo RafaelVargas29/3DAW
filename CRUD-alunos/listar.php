@@ -43,8 +43,8 @@
                 <td style="border: 1px solid black";><?php echo $linha["email"];?></td>
                 <td style="border: 1px solid black";><?php echo $linha ["matricula"];?></td>
                 <td style="border: 1px solid black";>
-                <a href="editar.php?codigo=<?php echo $linha ["id"];?>">Editar</a> | 
-                <a href="excluir.php?codigo=<?php echo $linha ["id"];?>">Excluir</a>
+                <a href="editar.php?id=<?php echo $linha ["id"];?>">Editar</a> | 
+                <a href="excluir.php?id=<?php echo $linha ["id"];?>">Excluir</a>
                 </td>
             </tr>
             <?php }?>
