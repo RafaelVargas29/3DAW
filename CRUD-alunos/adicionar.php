@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CRUD Alunos - Adicionar</title>
+    <title>CRUD Alunos | Adicionar</title>
 </head>
 <body>
     <h1>Adicionar Aluno</h1>
