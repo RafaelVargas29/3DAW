@@ -7,12 +7,12 @@
 <body>
     <h1>Adicionar Cliente</h1>
     <form action="criar.php" method="POST">
-        Nome: <input type="text" name="nome"><br><br>
-        CPF: <input type="text" name="cpf"><br><br>
-        Endereço: <input type="text" name="endereco"><br><br>
-        CEP: <input type="text" name="cep"><br><br>
-        Cidade: <input type="text" name="cidade"><br><br>
-        Estado: <input type="text" name="estado"><br><br>
+        Nome:<br><input type="text" name="nome"><br><br>
+        CPF:<br><input type="text" name="cpf"><br><br>
+        Endereço:<br><input type="text" name="endereco"><br><br>
+        CEP:<br><input type="text" name="cep"><br><br>
+        Cidade:<br><input type="text" name="cidade"><br><br>
+        Estado:<br><input type="text" name="estado"><br><br>
 
         <input type="submit" value="Criar">
     </form>
