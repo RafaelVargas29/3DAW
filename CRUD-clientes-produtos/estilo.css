@@ -13,13 +13,14 @@ body{font-family: 'Noto Sans', sans-serif;}
         
         button:hover{background-color: green;}
         button:hover{cursor: pointer;}
-        
-        .botao{   box-shadow: 5px 5px grey;
-                border: 1px solid black;
-                padding: 25px;
-                margin-right: 25px;
-                font-size: 18px;
+        button:hover{width: 250px;}
 
+        .botao{ box-shadow: 3px 3px grey;
+                border: 1px solid black;
+                padding: 5px;
+                margin-right: 25px;
+                font-size: 15px;
+                font-weight: bold;
         }
         footer{
                 position: absolute;

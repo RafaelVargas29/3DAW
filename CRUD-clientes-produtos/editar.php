@@ -30,11 +30,11 @@
         <h1> Editar | CRUD - Clientes</h1>
     </header>
     <nav>
-        <a href="index.html"><button>Página inicial</button></a>
-        <a href="listarum.php"><button>Listar um cliente</button></a>
-        <a href="excluir.php"><button>Excluir cliente</button></a>
-        <a href="criar.php"><button>Criar cliente</button></a>
-        <a href="listartodos.php"><button>Listar todos os clientes</button></a>
+        <a href="index.html"><button class="botao">Página inicial</button></a>
+        <a href="listarum.php"><button class="botao">Listar um cliente</button></a>
+        <a href="excluir.php"><button class="botao">Excluir cliente</button></a>
+        <a href="criar.php"><button class="botao">Criar cliente</button></a>
+        <a href="listartodos.php"><button class="botao">Listar todos os clientes</button></a>
     </nav>
 
     <section>
