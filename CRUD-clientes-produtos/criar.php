@@ -64,9 +64,12 @@
 
 
     
-    if($nome != "" && $endereco != "" && $cpf){
+    if($nome != "" && $endereco != "" && $cpf && $cep != "" && $cidade != "" && $estado != "" ){
         $consulta = "INSERT INTO `cliente`(`nome`, `cpf`, `endereco`, `cep`, `cidade`, `estado`) VALUES ('$nome','$cpf','$endereco','$cep','$cidade','$estado')";
-        echo "Cliente $nome inserido com sucesso!";
+        echo "<h4>Cliente $nome inserido com sucesso!</h4>";
+    }
+    else{
+        echo"<h4>Nenhum campo pode estar vazio</h4>";
     }
 
     $con = $conn->query($consulta) or die ($conn->error);
