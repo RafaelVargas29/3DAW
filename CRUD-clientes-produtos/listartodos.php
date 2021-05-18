@@ -13,33 +13,55 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CRUD Clientes/Produtos | Listar todos</title>
+        <link rel="stylesheet" href="estilo.css">
+
+        <style>
+            section{Position: relative;
+                    top: 110px;
+                    margin-left: 320px;
+            }
+        </style>
     </head>
     <body>
-        <h1>LISTA DE CLIENTES</h1>
+        <header>
+            <h1> Lista de Clientes | CRUD - Clientes/Produtos</h1>
+        </header>
+        <nav>
+            <a href="index.html"><button>Página inicial</button></a>
+            <a href="listarum.php"><button>Listar um cliente</button></a>
+            <a href="excluir.php"><button>Excluir cliente</button></a>
+            <a href="editar.php"><button>Editar cliente</button></a>
+            <a href="criar.php"><button>Criar cliente</button></a>
+        </nav>
+        <section>
+            <table style="border: 1px solid green";>
+                <tr>
+                <td style="border: 1px solid green";>ID</td>
+                    <td style="border: 1px solid green";>NOME</td>
+                    <td style="border: 1px solid green";>CPF</td>
+                    <td style="border: 1px solid green";>ENDEREÇO</td>
+                    <td style="border: 1px solid green";>CEP</td>
+                    <td style="border: 1px solid green";>CIDADE</td>
+                    <td style="border: 1px solid green";>ESTADO</td>
+                </tr>
+                
+                <?php
+                    while($linha = $con->fetch_array()){ ?>
+                <tr>
+                <td style="border: 1px solid green";><?php echo $linha ["id"];?></td>
+                    <td style="border: 1px solid green";><?php echo $linha ["nome"];?></td>
+                    <td style="border: 1px solid green";><?php echo $linha ["cpf"];?></td>
+                    <td style="border: 1px solid green";><?php echo $linha["endereco"];?></td>
+                    <td style="border: 1px solid green";><?php echo $linha ["cep"];?></td>
+                    <td style="border: 1px solid green";><?php echo $linha ["cidade"];?></td>
+                    <td style="border: 1px solid green";><?php echo $linha ["estado"];?></td>  
+                </tr>
+                <?php }?>
+            </table>
+        </section>
 
-        <table style="border: 1px solid black";>
-            <tr>
-            <td style="border: 1px solid black";>ID</td>
-                <td style="border: 1px solid black";>NOME</td>
-                <td style="border: 1px solid black";>CPF</td>
-                <td style="border: 1px solid black";>ENDEREÇO</td>
-                <td style="border: 1px solid black";>CEP</td>
-                <td style="border: 1px solid black";>CIDADE</td>
-                <td style="border: 1px solid black";>ESTADO</td>
-            </tr>
-            
-            <?php
-                while($linha = $con->fetch_array()){ ?>
-            <tr>
-            <td style="border: 1px solid black";><?php echo $linha ["id"];?></td>
-                <td style="border: 1px solid black";><?php echo $linha ["nome"];?></td>
-                <td style="border: 1px solid black";><?php echo $linha ["cpf"];?></td>
-                <td style="border: 1px solid black";><?php echo $linha["endereco"];?></td>
-                <td style="border: 1px solid black";><?php echo $linha ["cep"];?></td>
-                <td style="border: 1px solid black";><?php echo $linha ["cidade"];?></td>
-                <td style="border: 1px solid black";><?php echo $linha ["estado"];?></td>  
-            </tr>
-            <?php }?>
-        </table>
+        <footer>
+            <h3>Rafael Vargas - Matricula: 1820478300010</h3>   
+        </footer>
     </body>
 </html>
