@@ -54,10 +54,14 @@
     include_once("conexaocl.php");
     
     $nome = $_POST["nome"];
-
-    $consulta = "SELECT * FROM `cliente` WHERE `nome` = '$nome'";
-    $resultado = $conn->query($consulta);
-    $linha = $resultado->fetch_assoc();
+    if($nome != ""){
+        $consulta = "SELECT * FROM `cliente` WHERE `nome` = '$nome'";
+        $resultado = $conn->query($consulta);
+        $linha = $resultado->fetch_assoc();
+    }
+    else{
+        echo "<h4>O campo nome não pode estar vazio!</h4>"; 
+    }
     
     
     $con = $conn->query($consulta) or die ($conn->error);
@@ -79,7 +83,7 @@
             CEP:<br><input type="text" name="cep" value="<?php echo $linha["cep"]?>"><br>
             Cidade:<br><input type="text" name="cidade" value="<?php echo $linha["cidade"]?>"><br>
             Estado:<br><input type="text" name="estado" value="<?php echo $linha["estado"]?>"><br>
-            <input type="submit" value="Editar"></a>
+            <input type="submit" value="Editar" name="editado"></a>
         </form>
     </section>
 </body>
@@ -93,8 +97,13 @@
     $cep = $_POST["cep"];
     $cidade = $_POST["cidade"];
     $estado= $_POST["estado"];
-
-    $consulta = "UPDATE `cliente` SET `nome` = '$nome', `cpf` = '$cpf', `endereco` = '$endereco', `cep` = '$cep', `cidade` = '$cidade', `estado` = '$estado' WHERE `cliente`.`id` = '$id'";
+    $resposta = $_POST["editado"];
+    $consulta = "UPDATE `cliente` SET `nome` = '$nome', `cpf` = '$cpf', `endereco` = '$endereco', `cep` = 
     
+    '$cep', `cidade` = '$cidade', `estado` = '$estado' WHERE `cliente`.`id` = '$id'";
+
+    if($resposta == 'Editar'){
+        echo"<h4>Cliente editado!</h4>";
+    }
     $con = $conn->query($consulta) or die ($conn->error);
 ?>
