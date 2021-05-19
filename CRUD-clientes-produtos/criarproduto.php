@@ -1,7 +1,7 @@
 <?php
     include_once("conexaopdt.php");
 
-    $filename = 'C:\Users\Pichau\Desktop\FAETERJ\TERCEIRO PERIODO\3DAW\Produtos.csv';
+    $filename = 'C:/Users/Pichau/Desktop/FAETERJ/TERCEIRO PERIODO/3DAW/Produtos.csv';
 
     if(file_exists($filename)){
         if(mysqli_query($conn, "LOAD DATA INFILE '$filename' INTO TABLE produto
