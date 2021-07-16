@@ -5,21 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incluir Produto</title>
+
+    <script>
+        function enviaForm(){
+            xmmlhttp = new XMLHttpRequest;
+            console.log(this.response.Text);
+
+            let codbarra = document.getElementById("icodbarra").value;
+            let nome = document.getElementById("inome").value;
+            let fabricante = document.getElementById("ifabricante").value;
+            let categoria = document.getElementById("icategoria").value;
+            let tipo = document.getElementById("itipo").value;
+            let preco = document.getElementById("ipreco").value;
+            let quantestoque = document.getElementById("iquantestoque").value;
+            let peso = document.getElementById("ipeso").value;
+            let descricao = document.getElementById("idescricao").value;
+            let data = document.getElementById("idata").value;
+            let ativo = 1;
+            let varcase = 0;
+
+            xmmlhttp.open("GET","3DAW/av2-crud-js-php/server.php?codbarra="+codbarra+"&nome="+nome+
+            "&fabricante="+fabricante+"&categoria="+categoria+"&tipo="+tipo+"&preco="+preco+"&quantestoque="+quantestoque+
+            "&peso="+peso+"&descricao="+descricao+"&data="+data+"&ativo="+ativo+"&varcase="+varcase,true);
+
+            xmmlhttp.send();
+        }
+    </script>
 </head>
 <body>
     <section>
         <h1>Incuir Produto</h1>
         <form action="" method="">
-            Codigo de Barras:<br><input type="text" id="icdbarra" name="cdbarra"><br><br>
+            Codigo de Barras:<br><input type="text" id="icodbarra" name="codbarra"><br><br>
             Nome:<br><input type="text" id="inome" name="nome"><br><br>
             Fabricante:<br><input type="text" id="ifabricante" name="fabricante"><br><br>
-            Caegoria:<br><input type="text" id="icategoria" name="categoria"><br><br>
+            Categoria:<br><input type="text" id="icategoria" name="categoria"><br><br>
             Tipo:<br><input type="text" id="itipo" name="tipo"><br><br>
             Preço de venda:<br><input type="text" id="ipreco" name="preco"><br><br>
             Quantidade em estoque:<br><input type="text" id="iquantestoque" name="quantestoque"><br><br>
             Peso em Gramas:<br><input type="text" id="ipeso" name="peso"><br><br>
             Descrição:<br><input type="text" id="idescricao" name="descricao"><br><br>
             Data da inclusão:<br><input type="date" id="idata"name="data"><br><br>
+
+            <input type="button" id="iincluir" value="Incluir" onclick="enviaForm()">
         </form>
     </section>
 </body>
