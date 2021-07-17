@@ -20,7 +20,7 @@
             let peso = document.getElementById("ipeso").value;
             let descricao = document.getElementById("idescricao").value;
             let data = document.getElementById("idata").value;
-            //let ativo = 1;
+            let ativo = document.getElementById("iativo").value;
             //let varcase = 0;
 
             xmlHttp.onreadystatechange = function() {
@@ -50,6 +50,7 @@
             Peso em Gramas:<br><input type="text" id="ipeso" name="peso"><br><br>
             Descrição:<br><input type="text" id="idescricao" name="descricao"><br><br>
             Data da inclusão:<br><input type="date" id="idata"name="data"><br><br>
+            Ativo:<br><input type="number" id="iativo"name="iativo" value="1"><br><br>
 
             <input type="button" id="iincluir" value="Incluir" onclick="EnviarForm()">
         </form>
