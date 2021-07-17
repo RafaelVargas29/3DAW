@@ -7,8 +7,8 @@
     <title>Incluir Produto</title>
 
     <script>
-        function enviaForm(){
-            xmmlhttp = new XMLHttpRequest;
+        function EnviarForm() {
+            var xmlHttp = new XMLHttpRequest();
             
             let codbarra = document.getElementById("icodbarra").value;
             let nome = document.getElementById("inome").value;
@@ -23,18 +23,24 @@
             let ativo = 1;
             let varcase = 0;
 
-            xmmlhttp.open("GET","3DAW/av2-crud-js-php/server.php?codbarra="+codbarra+"&nome="+nome+
+            xmlHttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log("Retornou: " + this.responseText);
+                }
+            }
+            xmlHttp.open("GET","https://localhost/3DAW/av2-crud-js-php/server.php?codbarra="+codbarra+"&nome="+nome+
             "&fabricante="+fabricante+"&categoria="+categoria+"&tipo="+tipo+"&preco="+preco+"&quantestoque="+quantestoque+
             "&peso="+peso+"&descricao="+descricao+"&data="+data+"&ativo="+ativo+"&varcase="+varcase,true);
 
-            xmmlhttp.send();
+            xmlHttp.send();
+            console.log("Requisição enviada.")
         }
     </script>
 </head>
 <body>
     <section>
         <h1>Incuir Produto</h1>
-        <form action="" method="">
+        <form action="" id="iform" method="">
             Codigo de Barras:<br><input type="text" id="icodbarra" name="codbarra"><br><br>
             Nome:<br><input type="text" id="inome" name="nome"><br><br>
             Fabricante:<br><input type="text" id="ifabricante" name="fabricante"><br><br>
@@ -46,7 +52,7 @@
             Descrição:<br><input type="text" id="idescricao" name="descricao"><br><br>
             Data da inclusão:<br><input type="date" id="idata"name="data"><br><br>
 
-            <input type="button" id="iincluir" value="Incluir" onclick="enviaForm()">
+            <input type="button" id="iincluir" value="Incluir" onclick="EnviarForm()">
         </form>
     </section>
 </body>
