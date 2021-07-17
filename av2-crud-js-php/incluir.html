@@ -20,20 +20,19 @@
             let peso = document.getElementById("ipeso").value;
             let descricao = document.getElementById("idescricao").value;
             let data = document.getElementById("idata").value;
-            let ativo = 1;
-            let varcase = 0;
+            //let ativo = 1;
+            //let varcase = 0;
 
             xmlHttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    console.log("Retornou: " + this.responseText);
+                    //console.log("Retornou: " + this.responseText);
                 }
             }
-            xmlHttp.open("GET","https://localhost/3DAW/av2-crud-js-php/server.php?codbarra="+codbarra+"&nome="+nome+
-            "&fabricante="+fabricante+"&categoria="+categoria+"&tipo="+tipo+"&preco="+preco+"&quantestoque="+quantestoque+
-            "&peso="+peso+"&descricao="+descricao+"&data="+data+"&ativo="+ativo+"&varcase="+varcase,true);
+            xmlHttp.open("GET","http://localhost/3DAW/av2-crud-js-php/server.php?icodbarra="+codbarra+"&inome="+nome+
+            "&ifabricante="+fabricante+"&icategoria="+categoria+"&itipo="+tipo+"&ipreco="+preco+"&iquantestoque="+quantestoque+"&ipeso="+peso+"&idescricao="+descricao+"&idata="+data,true);
 
             xmlHttp.send();
-            console.log("Requisição enviada.")
+            console.log("Requisição enviada.");
         }
     </script>
 </head>
