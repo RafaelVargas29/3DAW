@@ -33,10 +33,27 @@
             xmlHttp.send();
             console.log("Requisição enviada.");
         }
-       
+        
+        function populaSel(){
+            let xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let obj  = JSON.parse(this.responseText);
+                    
+                    let cate = document.getElementById("icategoria");
+                    for(i=0; i < obj.length; i++){
+                        let cate2 = new Option(obj[i], obj[i]);
+                        cate.options.add(cate2);
+                    }
+                }
+            }
+            xmlhttp.open("GET", "http://localhost/3DAW/av2-crud-js-php/popular.php",true);
+            xmlhttp.send();
+        }
     </script>
 </head>
-<body>
+<body onselect="populaSel()">
     <section>
         <h1>Incuir Produto</h1>
         <form action="" id="iform" method="">
