@@ -21,18 +21,27 @@
             let descricao = document.getElementById("idescricao").value;
             let data = document.getElementById("idata").value;
             let ativo = document.getElementById("iativo").value;
-            //let varcase = 0;
 
             xmlHttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     //console.log("Retornou: " + this.responseText);
                 }
             }
-            xmlHttp.open("GET","http://localhost/3DAW/av2-crud-js-php/server.php?icodbarra="+codbarra+"&inome="+nome+
+            xmlHttp.open("GET","http://localhost/3DAW/av2-crud-js-php/incluir.php?icodbarra="+codbarra+"&inome="+nome+
             "&ifabricante="+fabricante+"&icategoria="+categoria+"&itipo="+tipo+"&ipreco="+preco+"&iquantestoque="+quantestoque+"&ipeso="+peso+"&idescricao="+descricao+"&idata="+data+"&iativo="+ativo,true);
 
             xmlHttp.send();
             console.log("Requisição enviada.");
+        }
+
+        function popula(strCATEG){
+            let http = new XMLHttpRequest();
+
+            http.onreadystatechange = function(){
+                if (this.state == 4 && this.readyState == 200){
+                    let obj = JSON.parse(this.responseText);
+                }
+            }
         }
     </script>
 </head>
