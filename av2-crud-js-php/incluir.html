@@ -34,19 +34,6 @@
             console.log("Requisição enviada.");
         }
 
-        function popula(strCATEG){
-            let http = new XMLHttpRequest();
-
-            let varcase = document.getElementById("ivarcase").value;
-            
-            http.onreadystatechange = function(){
-                if (this.state == 4 && this.readyState == 200){
-                    let obj = JSON.parse(this.responseText);
-                }
-            }
-            http.open("GET","http://localhost/3DAW/av2-crud-js-php/incluir.php?ivarcase="+varcase ,true);
-            http.send();
-        }
     </script>
 </head>
 <body>
@@ -68,7 +55,6 @@
             Descrição:<br><input type="text" id="idescricao" name="descricao"><br><br>
             Data da inclusão:<br><input type="date" id="idata"name="data"><br><br>
             <input type="hidden" id="iativo"name="iativo" value="1"><br><br>
-            <input type="hidden" id="varcase" value="1"><br><br>
 
             <input type="button" id="iincluir" value="Incluir" onclick="EnviarForm()">
         </form>
