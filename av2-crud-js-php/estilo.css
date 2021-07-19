@@ -1,0 +1,31 @@
+body{font-family: 'Noto Sans', sans-serif;}
+        header{ Position: absolute;
+                top: 0px;
+                width: 1350px;
+                text-align: center;
+                background-color: green;
+        }
+        nav{
+                position: relative;
+                top: 80px;
+                text-align:center;
+        }
+        
+        button:hover{background-color: green;}
+        button:hover{cursor: pointer;}
+        button:hover{width: 250px;}
+
+        .botao{ box-shadow: 3px 3px grey;
+                border: 1px solid black;
+                padding: 5px;
+                margin-right: 25px;
+                font-size: 15px;
+                font-weight: bold;
+        }
+        footer{
+                position: absolute;
+                bottom: 0px;
+                width: 1350px;
+                background-color: green;
+        }
+        
