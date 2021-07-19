@@ -40,10 +40,11 @@
             xmlhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
                     let obj  = JSON.parse(this.responseText);
+                    console.log(this.responseText);
                     
                     let cate = document.getElementById("icategoria");
                     for(i=0; i < obj.length; i++){
-                        let cate2 = new Option(obj[i], obj[i]);
+                        let cate2 = new Option(obj[i]);
                         cate.options.add(cate2);
                     }
                 }
@@ -53,7 +54,7 @@
         }
     </script>
 </head>
-<body onselect="populaSel()">
+<body onload="populaSel()">
     <section>
         <h1>Incuir Produto</h1>
         <form action="" id="iform" method="">
