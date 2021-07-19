@@ -14,7 +14,7 @@
     $data = $_GET["idata"];
     $ativo = $_GET["iativo"];
 
-    
+
 
     $consulta = "INSERT INTO `produtos`(`codbarra`, `nome`, `fabricante`, `categoria`, `tipo`, `precovenda`, `quantestoque`,`peso`,`descricao`,`dataincl`,`ativo`) VALUES ('$codbarra','$nome','$fabri','$cate','$tipo','$preco','$quant','$peso','$descr','$data','$ativo')";
     
