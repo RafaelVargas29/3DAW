@@ -22,16 +22,23 @@
             let data = document.getElementById("idata").value;
             let ativo = document.getElementById("iativo").value;
 
-            xmlHttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    //console.log("Retornou: " + this.responseText);
-                }
+            if(codbarra == "" || nome == "" || fabricante == "" || categoria == "" || tipo =="" || preco == "" || quantestoque =="" || peso == "" || descricao == "" || data ==""){
+                document.getElementById("imsgErro").innerText = "Há campos não preenchidos!";
             }
-            xmlHttp.open("GET","http://localhost/3DAW/av2-crud-js-php/incluir.php?icodbarra="+codbarra+"&inome="+nome+
-            "&ifabricante="+fabricante+"&icategoria="+categoria+"&itipo="+tipo+"&ipreco="+preco+"&iquantestoque="+quantestoque+"&ipeso="+peso+"&idescricao="+descricao+"&idata="+data+"&iativo="+ativo,true);
+            else{
+                xmlHttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        //console.log("Retornou: " + this.responseText);
+                    }
+                }
+                xmlHttp.open("GET","http://localhost/3DAW/av2-crud-js-php/incluir.php?icodbarra="+codbarra+"&inome="+nome+
+                "&ifabricante="+fabricante+"&icategoria="+categoria+"&itipo="+tipo+"&ipreco="+preco+"&iquantestoque="+quantestoque+"&ipeso="+peso+"&idescricao="+descricao+"&idata="+data+"&iativo="+ativo,true);
 
-            xmlHttp.send();
-            console.log("Requisição enviada.");
+                xmlHttp.send();
+                console.log("Requisição enviada.");
+                document.getElementById("imsgErro").innerText = "Incluído com sucesso!";
+            }
+           
         }
         
         function populaSel(){
@@ -77,22 +84,22 @@
     <section>
         <h1>Incuir Produto</h1>
         <form action="" id="iform" method="">
-            Codigo de Barras:<br><input type="text" id="icodbarra" name="codbarra"><br><br>
-            Nome:<br><input type="text" id="inome" name="nome"><br><br>
-            Fabricante:<br><input type="text" id="ifabricante" name="fabricante"><br><br>
+            Codigo de Barras:<br><input type="text" id="icodbarra" name="codbarra"><br>
+            Nome:<br><input type="text" id="inome" name="nome"><br>
+            Fabricante:<br><input type="text" id="ifabricante" name="fabricante"><br>
             Categoria:<br><select id="icategoria" name="categoria">
                 <option>Escolha uma Categoria</option>
             </select><br><br>
             Tipo:<br><select id="itipo" name="tipo">
             <option>Escolha um tipo</option>
             </select><br><br>
-            Preço de venda:<br><input type="text" id="ipreco" name="preco"><br><br>
-            Quantidade em estoque:<br><input type="text" id="iquantestoque" name="quantestoque"><br><br>
-            Peso em Gramas:<br><input type="text" id="ipeso" name="peso"><br><br>
-            Descrição:<br><input type="text" id="idescricao" name="descricao"><br><br>
-            Data da inclusão:<br><input type="date" id="idata"name="data"><br><br>
+            Preço de venda:<br><input type="text" id="ipreco" name="preco"><br>
+            Quantidade em estoque:<br><input type="text" id="iquantestoque" name="quantestoque"><br>
+            Peso em Gramas:<br><input type="text" id="ipeso" name="peso"><br>
+            Descrição:<br><input type="text" id="idescricao" name="descricao"><br>
+            Data da inclusão:<br><input type="date" id="idata"name="data"><br>
             <input type="hidden" id="iativo"name="iativo" value="1">
-
+            <p id="imsgErro"></p>
             <input type="button" id="iincluir" value="Incluir" onclick="EnviarForm()">
         </form>
     </section>
