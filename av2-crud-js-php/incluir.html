@@ -52,9 +52,28 @@
             xmlhttp.open("GET", "http://localhost/3DAW/av2-crud-js-php/popular.php",true);
             xmlhttp.send();
         }
+
+        function populaSelT(){
+            let xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let obj  = JSON.parse(this.responseText);
+                    console.log(this.responseText);
+                    
+                    let tp = document.getElementById("itipo");
+                    for(i=0; i < obj.length; i++){
+                        let tp2 = new Option(obj[i]);
+                        tp.options.add(tp2);
+                    }
+                }
+            }
+            xmlhttp.open("GET", "http://localhost/3DAW/av2-crud-js-php/populatipo.php",true);
+            xmlhttp.send();
+        }
     </script>
 </head>
-<body onload="populaSel()">
+<body onload="populaSel(), populaSelT()">
     <section>
         <h1>Incuir Produto</h1>
         <form action="" id="iform" method="">
@@ -62,10 +81,10 @@
             Nome:<br><input type="text" id="inome" name="nome"><br><br>
             Fabricante:<br><input type="text" id="ifabricante" name="fabricante"><br><br>
             Categoria:<br><select id="icategoria" name="categoria">
-            
+                <option>Escolha uma Categoria</option>
             </select><br><br>
             Tipo:<br><select id="itipo" name="tipo">
-            
+            <option>Escolha um tipo</option>
             </select><br><br>
             Preço de venda:<br><input type="text" id="ipreco" name="preco"><br><br>
             Quantidade em estoque:<br><input type="text" id="iquantestoque" name="quantestoque"><br><br>
