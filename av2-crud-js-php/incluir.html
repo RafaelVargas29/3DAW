@@ -5,7 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incluir Produto</title>
+    <link rel="stylesheet" href="estilo.css">
 
+    <style>
+        section{position: relative;
+                border: 1px solid green;
+                padding: 5px;
+                top: 90px;
+                text-align: center;
+        }
+        form{
+            position: relative;
+            border: double green;
+            margin-left: 555px;
+            padding: 10px;
+            width: 200px;
+        }
+    </style>
     <script>
         function EnviarForm() {
             var xmlHttp = new XMLHttpRequest();
@@ -81,8 +97,17 @@
     </script>
 </head>
 <body onload="populaSel(), populaSelT()">
+    <header>
+        <h1> Incluir produto</h1>
+    </header>
+    <nav>
+        <a href="index.html"><button class="botao">Página inicial</button></a>
+        <a href="listarum.php"><button class="botao">Listar um produto</button></a>
+        <a href="excluir.php"><button class="botao">Excluir produto</button></a>
+        <a href="editar.php"><button class="botao">Editar produto</button></a>
+        <a href="listartodos.php"><button class="botao">Listar todos os produtos</button></a>
+    </nav>
     <section>
-        <h1>Incuir Produto</h1>
         <form action="" id="iform" method="">
             Codigo de Barras:<br><input type="text" id="icodbarra" name="codbarra"><br>
             Nome:<br><input type="text" id="inome" name="nome"><br>

@@ -23,6 +23,16 @@
         </style>
     </head>
     <body>
+        <header>
+            <h1> Lista de produtos</h1>
+        </header>
+        <nav>
+            <a href="index.html"><button class="botao">Página inicial</button></a>
+            <a href="listarum.php"><button class="botao">Listar um produto</button></a>
+            <a href="excluir.php"><button class="botao">Excluir produto</button></a>
+            <a href="editar.php"><button class="botao">Editar produto</button></a>
+            <a href="criar.php"><button class="botao">Incluir produto</button></a>
+        </nav>
         <section>
             <table style="border: 1px solid green";>
                 <tr>

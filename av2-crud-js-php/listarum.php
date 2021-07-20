@@ -6,13 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo.css">
     <style>
-       
+       section{
+                position:relative;
+                top:90px;
+                border: 1px solid green;
+                text-align: center;
+                margin-top: 20px;
+        }
+        form{
+            border: 1px solid green;
+            width: 300px;
+            margin-left: 500px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        table{
+            border: 1px solid green;
+            margin-left: 300px;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
     </style>
 
     
 </head>
 <body>
-
+<header>
+        <h1> Listar um produto</h1>
+        </header>
+        
+        <nav>
+            <a href="index.html"><button class="botao">Página inicial</button></a>
+            <a href="listartodos.php"><button class="botao">Listar todos os clientes</button></a>
+            <a href="excluir.php"><button class="botao">Excluir cliente</button></a>
+            <a href="editar.php"><button class="botao">Editar cliente</button></a>
+            <a href="criar.php"><button class="botao">Criar cliente</button></a>
+        </nav>
         <section>
             <h3>Digite o codigo de barras do produto</h3>
             <form action="listarum.php" method="POST">
@@ -20,11 +49,6 @@
                 <input type="submit" value="Listar">
             </form>
         </section>
-
-        <footer>
-            <h3>Rafael Vargas - Matricula: 1820478300010</h3>   
-        </footer>
-        
 </body>
 </html>
 
