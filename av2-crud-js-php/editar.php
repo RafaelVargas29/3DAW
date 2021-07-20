@@ -89,18 +89,18 @@
 </html>
 
 <?php 
-    $id = $_GET["id"];
-    $codbarra = $_GET["codbarra"];
-    $nome = $_GET["nome"];
-    $fabri = $_GET["fabricante"];
-    $cate = $_GET["categoria"];
-    $tipo = $_GET["tipo"];
-    $preco = $_GET["precovenda"];
-    $quant = $_GET["quantestoque"];
-    $peso = $_GET["peso"];
-    $descr = $_GET["descricao"];
-    $data = $_GET["dataincl"];
-    $ativo = $_GET["ativo"];
+    $id = $_POST["id"];
+    $codbarra = $_POST["codbarra"];
+    $nome = $_POST["nome"];
+    $fabri = $_POST["fabricante"];
+    $cate = $_POST["categoria"];
+    $tipo = $_POST["tipo"];
+    $preco = $_POST["precovenda"];
+    $quant = $_POST["quantestoque"];
+    $peso = $_POST["peso"];
+    $descr = $_POST["descricao"];
+    $data = $_POST["dataincl"];
+    $ativo = $_POST["ativo"];
     $resposta = $_POST["editado"];
     $consulta = "UPDATE `produtos` SET `id` = '$id',`codbarra` = '$codbarra', `nome` = '$nome', `fabricante` = '$fabri', `categoria` = '$cate', `tipo` = '$tipo', `precovenda` = '$preco', `quantestoque` = '$quant', `peso` = '$peso', `descricao` = '$descr', `dataincl` = '$data' WHERE `produtos`.`id` = '$id'";
 
