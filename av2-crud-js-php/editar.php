@@ -33,7 +33,7 @@
         <a href="listarum.php"><button class="botao">Listar um produto</button></a>
         <a href="excluir.php"><button class="botao">Excluir produto</button></a>
         <a href="incluir.html"><button class="botao">Incluir produto</button></a>
-        <a href="listartodos.php"><button class="botao">Listar todos os clientes</button></a>
+        <a href="listartodos.php"><button class="botao">Listar todos os produtos</button></a>
     </nav>
 
     <section>
@@ -72,16 +72,16 @@
         <a>Editar produto</a>
         <form action="editar.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $linha["id"]?>"><br>
-            Codigo de barras:<br><input type="text" name="nome" value="<?php echo $linha["codbarra"]?>"><br>
-            Nome:<br><input type="text" name="cpf" value="<?php echo $linha["nome"]?>"><br>
-            Fabricante:<br><input type="text" name="endereco" value="<?php echo $linha["fabricante"]?>"><br>
-            Categoria:<br><input type="text" name="cep" value="<?php echo $linha["categoria"]?>"><br>
-            Tipo:<br><input type="text" name="cidade" value="<?php echo $linha["tipo"]?>"><br>
-            Preço de venda:<br><input type="text" name="estado" value="<?php echo $linha["precovenda"]?>"><br>
-            Quantidade em Estoque:<br><input type="text" name="estado" value="<?php echo $linha["quantestoque"]?>"><br>
-            Peso:<br><input type="text" name="estado" value="<?php echo $linha["peso"]?>"><br>
-            Descrição:<br><input type="text" name="estado" value="<?php echo $linha["descricao"]?>"><br>
-            Data de inclusão:<br><input type="text" name="estado" value="<?php echo $linha["dataincl"]?>"><br>
+            Codigo de barras:<br><input type="text" name="codbarra" value="<?php echo $linha["codbarra"]?>"><br>
+            Nome:<br><input type="text" name="nome" value="<?php echo $linha["nome"]?>"><br>
+            Fabricante:<br><input type="text" name="fabricante" value="<?php echo $linha["fabricante"]?>"><br>
+            Categoria:<br><input type="text" name="categoria" value="<?php echo $linha["categoria"]?>"><br>
+            Tipo:<br><input type="text" name="tipo" value="<?php echo $linha["tipo"]?>"><br>
+            Preço de venda:<br><input type="text" name="preco" value="<?php echo $linha["precovenda"]?>"><br>
+            Quantidade em Estoque:<br><input type="text" name="quantestoque" value="<?php echo $linha["quantestoque"]?>"><br>
+            Peso:<br><input type="text" name="peso" value="<?php echo $linha["peso"]?>"><br>
+            Descrição:<br><input type="text" name="descricao" value="<?php echo $linha["descricao"]?>"><br>
+            Data de inclusão:<br><input type="text" name="dataincl" value="<?php echo $linha["dataincl"]?>"><br>
             <input type="submit" value="Editar" name="editado"></a>
         </form>
     </section>
@@ -101,7 +101,7 @@
     $descr = $_GET["descricao"];
     $data = $_GET["dataincl"];
     $ativo = $_GET["ativo"];
-    
+    $resposta = $_POST["editado"];
     $consulta = "UPDATE `produtos` SET `id` = '$id',`codbarra` = '$codbarra', `nome` = '$nome', `fabricante` = '$fabri', `categoria` = '$cate', `tipo` = '$tipo', `precovenda` = '$preco', `quantestoque` = '$quant', `peso` = '$peso', `descricao` = '$descr', `dataincl` = '$data' WHERE `produtos`.`id` = '$id'";
 
     if($resposta == 'Editar'){

@@ -37,10 +37,10 @@
         
         <nav>
             <a href="index.html"><button class="botao">Página inicial</button></a>
-            <a href="listartodos.php"><button class="botao">Listar todos os clientes</button></a>
-            <a href="excluir.php"><button class="botao">Excluir cliente</button></a>
-            <a href="editar.php"><button class="botao">Editar cliente</button></a>
-            <a href="criar.php"><button class="botao">Criar cliente</button></a>
+            <a href="listartodos.php"><button class="botao">Listar todos os produtos</button></a>
+            <a href="excluir.php"><button class="botao">Excluir produto</button></a>
+            <a href="editar.php"><button class="botao">Editar produto</button></a>
+            <a href="criar.php"><button class="botao">Criar produto</button></a>
         </nav>
         <section>
             <h3>Digite o codigo de barras do produto</h3>
